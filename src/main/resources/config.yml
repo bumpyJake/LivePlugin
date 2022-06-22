@@ -1,0 +1,8 @@
+# Put the name of your "live" group here (NOT the displayname)
+live-group: live
+
+on-message: '&fYou are now &cLIVE! &7&oUse /live to go offline!'
+off-message: '&fYou are no longer live!'
+on-message-all: '&a%player% &fis now &cLIVE!'
+on-title: 'You are now &cLIVE!'
+on-subtitle: '&7Use /live to go offline!'

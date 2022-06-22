@@ -1,0 +1,13 @@
+name: LivePlugin
+version: '${project.version}'
+main: com.bumpyjake.live.Live
+api-version: 1.19
+authors: [ bumpyJake ]
+depend: [ LuckPerms ]
+description: Live plugin (cool)
+commands:
+  live:
+    description: Live command
+  liveplugin:
+    description: Live help
+    usage: /command <args>

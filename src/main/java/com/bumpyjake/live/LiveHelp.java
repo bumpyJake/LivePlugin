@@ -42,8 +42,10 @@ public class LiveHelp implements CommandExecutor, TabCompleter {
                     p.sendMessage(ColorUtils.translateColorCodes("&fIf you have any issues, contact &bbumpyJake#2004"));
                     p.sendMessage(ColorUtils.translateColorCodes("&8=========================="));
                 } else if (args[0].equalsIgnoreCase("reload")) {
-                    plugin.reloadConfig();
-                    p.sendMessage(ColorUtils.translateColorCodes("&aReloaded configuration"));
+                    if (p.hasPermission("liveplugin.reload")) {
+                        plugin.reloadConfig();
+                        p.sendMessage(ColorUtils.translateColorCodes("&aReloaded configuration"));
+                    }
                 }else{
                     p.sendMessage(ColorUtils.translateColorCodes("&cThis is not a valid argument"));
                 }

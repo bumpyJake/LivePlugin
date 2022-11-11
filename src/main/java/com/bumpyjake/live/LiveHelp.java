@@ -1,5 +1,6 @@
 package com.bumpyjake.live;
 
+import com.bumpyjake.live.utils.ColorUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -26,6 +27,7 @@ public class LiveHelp implements CommandExecutor, TabCompleter {
             if (args.length == 0){
                 p.sendMessage(ColorUtils.translateColorCodes("&8=========================="));
                 p.sendMessage(ColorUtils.translateColorCodes("&b/live &7- &fGive yourself the live role!"));
+                p.sendMessage(ColorUtils.translateColorCodes("&b/recording &7- &fGive yourself the recording role!"));
                 p.sendMessage(ColorUtils.translateColorCodes("&b/liveplugin help &7- &fShow this message!"));
                 p.sendMessage(ColorUtils.translateColorCodes("&b/liveplugin reload &7- &fReload the configuration!"));
                 p.sendMessage(ColorUtils.translateColorCodes(""));
@@ -36,6 +38,7 @@ public class LiveHelp implements CommandExecutor, TabCompleter {
                 if (args[0].equalsIgnoreCase("help")) {
                     p.sendMessage(ColorUtils.translateColorCodes("&8=========================="));
                     p.sendMessage(ColorUtils.translateColorCodes("&b/live &7- &fGive yourself the live role!"));
+                    p.sendMessage(ColorUtils.translateColorCodes("&b/recording &7- &fGive yourself the recording role!"));
                     p.sendMessage(ColorUtils.translateColorCodes("&b/liveplugin help &7- &fShow this message!"));
                     p.sendMessage(ColorUtils.translateColorCodes("&b/liveplugin reload &7- &fReload the configuration!"));
                     p.sendMessage(ColorUtils.translateColorCodes(""));

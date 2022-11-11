@@ -12,6 +12,7 @@ public final class Live extends JavaPlugin {
 
         getCommand("live").setExecutor(new LiveCommand(this));
         getCommand("liveplugin").setExecutor(new LiveHelp(this));
+        getCommand("recording").setExecutor(new RecCommand(this));
 
     }
 

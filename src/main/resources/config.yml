@@ -1,8 +1,15 @@
 # Put the name of your "live" group here (NOT the displayname)
 live-group: live
+rec-group: rec
 
-on-message: '&fYou are now &cLIVE! &7&oUse /live to go offline!'
-off-message: '&fYou are no longer live!'
-on-message-all: '&a%player% &fis now &cLIVE!'
-on-title: 'You are now &cLIVE!'
-on-subtitle: '&7Use /live to go offline!'
+live-on-message: '&fYou are now &cLIVE! &7&oUse /live to go offline!'
+live-off-message: '&fYou are no longer live!'
+live-on-message-all: '&a%player% &fis now &cLIVE!'
+live-on-title: 'You are now &cLIVE!'
+live-on-subtitle: '&7Use /live to go offline!'
+
+rec-on-message: '&fYou are now &cRECORDING! &7&oUse /recording to go offline!'
+rec-off-message: '&fYou are no longer recording!'
+rec-on-message-all: '&a%player% &fis now &cRECORDING!'
+rec-on-title: 'You are now &cRECORDING!'
+rec-on-subtitle: '&7Use /recording to stop recording!'

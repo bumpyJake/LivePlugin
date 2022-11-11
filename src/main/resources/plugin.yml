@@ -8,6 +8,8 @@ description: Live plugin (cool)
 commands:
   live:
     description: Live command
+  recording:
+    description: Rec command
   liveplugin:
     description: Live help
     usage: /command <args>

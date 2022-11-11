@@ -18,23 +18,23 @@ import java.util.UUID;
 
 import static org.bukkit.Bukkit.getServer;
 
-public class LiveCommand implements CommandExecutor {
+public class RecCommand implements CommandExecutor {
 
     private LuckPerms luckperms;
     private final Live plugin;
 
-    public LiveCommand(Live plugin){this.plugin = plugin;}
+    public RecCommand(Live plugin){this.plugin = plugin;}
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
         this.luckperms = getServer().getServicesManager().load(LuckPerms.class);
 
-        String onMessage = ColorUtils.translateColorCodes(plugin.getConfig().getString("live-on-message"));
-        String offMessage = ColorUtils.translateColorCodes(plugin.getConfig().getString("live-off-message"));
-        String onMessageAll = ColorUtils.translateColorCodes(plugin.getConfig().getString("live-on-message-all"));
-        String onTitle = ColorUtils.translateColorCodes(plugin.getConfig().getString("live-on-title"));
-        String onSubtitle = ColorUtils.translateColorCodes(plugin.getConfig().getString("live-on-subtitle"));
+        String onMessage = ColorUtils.translateColorCodes(plugin.getConfig().getString("rec-on-message"));
+        String offMessage = ColorUtils.translateColorCodes(plugin.getConfig().getString("rec-off-message"));
+        String onMessageAll = ColorUtils.translateColorCodes(plugin.getConfig().getString("rec-on-message-all"));
+        String onTitle = ColorUtils.translateColorCodes(plugin.getConfig().getString("rec-on-title"));
+        String onSubtitle = ColorUtils.translateColorCodes(plugin.getConfig().getString("rec-on-subtitle"));
         String groupLive = ("group." + plugin.getConfig().getString("live-group"));
         String groupRec = ("group." + plugin.getConfig().getString("rec-group"));
 
@@ -49,21 +49,21 @@ public class LiveCommand implements CommandExecutor {
 
             Set<String> tags = p.getScoreboardTags();
 
-            if (tags.contains("live")){
+            if (tags.contains("rec")){
                 p.sendMessage(offMessage);
-                DataMutateResult result = user.data().remove(liveNode);
+                DataMutateResult result = user.data().remove(recNode);
                 luckperms.getUserManager().saveUser(user);
-                p.removeScoreboardTag("live");
+                p.removeScoreboardTag("rec");
             }else{
-                if(tags.contains("rec")) {
-                    DataMutateResult result = user.data().remove(recNode);
-                    p.removeScoreboardTag("rec");
+                if (tags.contains("live")) {
+                    DataMutateResult result = user.data().remove(liveNode);
+                    p.removeScoreboardTag("live");
                 }
                 p.sendMessage(onMessage);
                 p.sendTitle(onTitle, onSubtitle, 0,30,5);
-                DataMutateResult result = user.data().add(liveNode);
+                DataMutateResult result = user.data().add(recNode);
                 luckperms.getUserManager().saveUser(user);
-                p.addScoreboardTag("live");
+                p.addScoreboardTag("rec");
                 Location ploc = p.getLocation();
                 p.playSound(ploc, Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1.0f, 1.0f);
                 for (Player online : Bukkit.getOnlinePlayers()) {
